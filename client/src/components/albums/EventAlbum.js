@@ -1,8 +1,7 @@
 //Components
 import Header from "../header/Header";
 import BookMeAlbum from "./BookMeAlbum";
-import React from "react";
-
+import React, { Fragment, useState, useEffect } from "react";
 
 // Photos
 import photo1 from "../assets/images/eventAlbum/event1.webp";
@@ -23,8 +22,26 @@ import photo15 from "../assets/images/eventAlbum/event15.webp";
 import Picture from "./Picture";
 
 function EventAlbum() {
+    const [photos, setPhotos] = useState([]);
+
+    const getPhotos = async () => {
+        try {
+            const response = await fetch("http://localhost:3000/images");
+            const jsonData = await response.json();
+
+            setPhotos(jsonData);
+            console.log(jsonData);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    useEffect(() => {
+        getPhotos();
+    }, []);
+
     return (
-        <>
+        <Fragment>
             <Header />
             <BookMeAlbum
                 title="Event Album"
@@ -35,25 +52,28 @@ function EventAlbum() {
             <div className="album py-5 bg-body-black">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
-                        <Picture image={photo1} />
+                        {photos.map((photo) => (
+                            <Picture image={photo.image_url} />
+                        ))}
+                        {/* <Picture image={photo1} />
                         <Picture image={photo2} />
                         <Picture image={photo3} />
                         <Picture image={photo4} />
                         <Picture image={photo5} />
-                        <Picture image={photo6} />
+                        <Picture image={photo6} /> */}
                         {/* <Picture image={photo7} />
                         <Picture image={photo8} />
                         <Picture image={photo9} />
                         <Picture image={photo10} /> */}
-                        <Picture image={photo11} />
+                        {/* <Picture image={photo11} />
                         <Picture image={photo12} />
                         <Picture image={photo13} />
                         <Picture image={photo14} />
-                        <Picture image={photo15} />
+                        <Picture image={photo15} /> */}
                     </div>
                 </div>
             </div>
-        </>
+        </Fragment>
     );
 }
 
