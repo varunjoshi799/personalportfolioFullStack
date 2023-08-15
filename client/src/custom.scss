@@ -1,0 +1,14 @@
+$theme-colors: (
+    "primary": #DB6532,
+    "secondary": white
+);
+
+$display-font-sizes: (
+    1: 8rem
+);
+
+$nav-link-hover-color: (
+    #DB6532
+);
+
+@import '~bootstrap/scss/bootstrap.scss'
