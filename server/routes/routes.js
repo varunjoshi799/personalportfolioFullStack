@@ -34,7 +34,7 @@ router.post("/persist-image", persistImage.persistImage);
 router.get("/retrieve-image/:cloudinary_id", retrieveImage.retrieveImage);
 
 // get all images
-router.get("/images", getImages.getImages);
+router.get("/images/:title", getImages.getImages);
 
 // delete image
 router.delete("/delete-image/:cloudinary_id", deleteImage.deleteImage);
