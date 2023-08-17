@@ -4,15 +4,14 @@ import React, { Fragment, useState, useEffect } from "react";
 import Header from "../header/Header";
 import BookMeAlbum from "./BookMeAlbum";
 import Picture from "./Picture";
+import baseURL from "../BaseURL";
 
 function EventAlbum() {
     const [photos, setPhotos] = useState([]);
 
     const getPhotos = async () => {
         try {
-            const response = await fetch(
-                "http://localhost:3000/images/portraitAlbum"
-            );
+            const response = await fetch(`${baseURL}/images/portraitAlbum`);
             const jsonData = await response.json();
 
             setPhotos(jsonData);

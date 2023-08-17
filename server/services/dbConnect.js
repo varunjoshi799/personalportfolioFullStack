@@ -1,12 +1,10 @@
 const pg = require("pg");
 
 const config = {
-    user: "varunjoshi",
-    database: "personalportfolio",
-    password: "oatmeal0",
+    user: process.env.PGUSER,
+    database: process.env.DATABASE,
+    password: process.env.PASSWORD,
     port: 5433,
-    max: 10, // max number of clients in the pool
-    idleTimeoutMillis: 30000,
 };
 
 const pool = new pg.Pool(config);
