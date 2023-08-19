@@ -11,7 +11,7 @@ Given that it was a photo heavy website, I wanted to implement full stack capabi
 
 **Problem:** Which database would serve my needs best?
 
-**Solution** I knew I would use Express and Node.js as my middleware. I identified that a postgreSQL database would work best. I found tutorials online that helped me gain an initial understand of postgreSQL. I determined that my schema would include an index, title, and link to the actual photo.
+**Solution** I knew I would use Express and Node.js as my middleware. I identified that a postgreSQL database would work best. I found tutorials online that helped me gain an initial understand of postgreSQL. I determined that my schema would include an index, title, and link to the actual photo. My front end was already built on React
 
 **Takeaway:** Identifying the schema first is extremely useful to reduce development time down the road
 
