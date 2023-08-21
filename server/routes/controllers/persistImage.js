@@ -25,7 +25,6 @@ exports.persistImage = (request, response) => {
                 const insertQuery = ` INSERT INTO images (title, cloudinary_id, image_url) 
             VALUES($1,$2,$3) RETURNING *`;
                 const values = [data.title, image.public_id, image.secure_url];
-
                 // execute query
                 client
                     .query(insertQuery, values)

@@ -1,10 +1,12 @@
 const pg = require("pg");
 
 const config = {
+    host: process.env.PGHOST,
     user: process.env.PGUSER,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD,
-    port: 5433,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
+    ssl: true
 };
 
 const pool = new pg.Pool(config);
