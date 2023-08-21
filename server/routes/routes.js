@@ -22,6 +22,7 @@ router.get("/", (req, res) => {
     res.json({
         message: "Request received",
     });
+    console.log("Connected");
 });
 
 // image upload API
