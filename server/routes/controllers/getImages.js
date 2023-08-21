@@ -11,12 +11,6 @@ cloudinary.config({
 
 exports.getImages = async (request, response) => {
     try {
-        // const { title } = request.params;
-        // const allImages = await db.pool.query(
-        //     `SELECT * FROM images`,
-        //     [title]
-        // );
-        // response.json(allImages.rows);
         const { title } = request.params;
         const allImages = await db.pool.query(
             `SELECT * FROM images WHERE title = $1`,
