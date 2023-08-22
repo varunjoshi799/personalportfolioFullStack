@@ -42,4 +42,5 @@ Given that it was a photo heavy website, I wanted to implement full stack capabi
 
 ## Additional
 
-A deployed website is coming soon!
+Backend deployed on [Render](https://full-stack-personal-portfolio.onrender.com)
+Frontend deployed on [Netlify](https://storied-cactus-e932e6.netlify.app/)
